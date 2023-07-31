@@ -16,9 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< Updated upstream
 from accounts import views
+=======
+from django.conf.urls.i18n import i18n_patterns
+>>>>>>> Stashed changes
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
+<<<<<<< Updated upstream
     path('accounts/', include('accounts.urls')),
 ]
+=======
+    path('api/', include('rest_framework.urls')),
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('', include('config.urls')),
+)
+>>>>>>> Stashed changes
