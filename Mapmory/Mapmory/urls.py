@@ -17,12 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from accounts import views
-from django.conf.urls.i18n import i18n_patterns
+from recommend import views
+from config import views
 
-urlpatterns = i18n_patterns(
+
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
     path('api/', include('rest_framework.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('recommend/', include('recommend.urls')),
+    path('config/', include('config.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('', include('config.urls')),
-)
+]
+

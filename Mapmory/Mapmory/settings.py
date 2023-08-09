@@ -11,16 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from django.conf import settings #프로젝트의 다양한 구성 요소에 설정 변수들을 활용할 수 있게 함
 import os
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# firebase Admin SDK 초기화
-cred_path = os.path.join(BASE_DIR, "serviceAccountKey.json")
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'account',
+    'accounts',
+    'recommend',
     'config',
 ]
 AUTH_USER_MODEL = 'auth.User'
@@ -52,7 +49,7 @@ AUTH_USER_MODEL = 'auth.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', #다국어 지원을 위한 middleware
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -114,22 +111,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-#다국어 설정
+
+
+# 기본 설정 언어
+LANGUAGE_CODE = 'ko' 
+
+# 지원할 언어
 LANGUAGES = [
     ('ko', 'Korean'),
     ('en', 'English'),
 ]
 
-#기본 설정 언어
-LANGUAGE_CODE = 'ko' 
+# 번역 관련 파일들을 관리할 경로
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 #언어 설정 세션
 LANGUAGE_SESSION_KEY = 'my_language'
 
-#로컬화 파읻들이 위치한 디렉토리 지정
-LOCALE_PATH = [
-    os.path.join(BASE_DIR, 'locale'),
-]
 
 TIME_ZONE = 'UTC'
 
