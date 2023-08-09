@@ -5,3 +5,8 @@
     ..
 같지 않을 경우
    검색 결과가 없습니다 출력
+<!--새로 커밋하려고 아무거나 입력한것임-->
+<form method='post' action={% url 'search' %}>
+    {% csrf_token %}
+    <input type="" name="search_button" value="검색">
+</form>
