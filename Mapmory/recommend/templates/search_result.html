@@ -1,12 +1,9 @@
-만약 입력한 지역과 데이터베이스에 저장된 지역이 같을 경우
-    (키워드) 추천 장소
-    장소1
-    사진: 가로로 볼 수 있게
-    ..
-같지 않을 경우
-   검색 결과가 없습니다 출력
-<!--새로 커밋하려고 아무거나 입력한것임-->
-<form method='post' action={% url 'search' %}>
-    {% csrf_token %}
-    <input type="" name="search_button" value="검색">
-</form>
+<!DOCTYPE hTML>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>검색 결과가 존재하지 않습니다.</h1>
+    <h1>{{keyword}}</h1>
+  </body>
+</html>

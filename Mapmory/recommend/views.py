@@ -1,11 +1,17 @@
 from django.shortcuts import render
-
+from . import local_data
 # 지역 검색
-from .local_data import loactions, recommended_places
+from .local_data import locations, recommended_places
 
 def search(request):
     if request.method == 'POST':
-        keyword = request.POST.get('search_button') # 지역(keyword) 입력받음
-        # 입력 받은 지역이 데이터베이스에 있는 지역과 일치하면 search_result.html로 이동
-        # 일치하지 않을 경우도 search_result.html로 이동
-        
+        keyword = request.POST.get('keyword') # 지역(keyword) 입력받음
+        if keyword == "서울":
+           return render(request, 'seoul.html')
+        elif keyword == local_data.locations[1]:
+           return render(request, 'busan.html')
+        elif keyword == local_data.locations[2]:
+           return render(request, 'jeju.html')
+        else:
+           return render(request, 'search_result.html')
+    return render(request, 'button.html')

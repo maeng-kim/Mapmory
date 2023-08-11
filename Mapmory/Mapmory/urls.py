@@ -19,7 +19,8 @@ from django.urls import path, include
 from accounts import views
 from recommend import views
 from config import views
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,3 @@ urlpatterns = [
     path('config/', include('config.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
-

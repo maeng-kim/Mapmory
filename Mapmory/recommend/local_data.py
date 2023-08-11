@@ -1,4 +1,6 @@
-loactions = [
+from django.conf import settings
+
+locations = [
     "서울",
     "부산",
     "제주도",
@@ -7,22 +9,26 @@ loactions = [
 recommended_places = [
     {
         "location":"서울",
-        "name":"롯데월드",
-        "image":"",
+        "place":"롯데월드",
     },
-     {
+    {
         "location":"서울",
-        "name":"한강 공원",
-        "image":"",
+        "place":"뚝섬 한강공원",
     },
     {
         "location":"부산",
-        "name":"광안리",
-        "image":"",
+        "place":"광안리",
+    },
+    {
+        "location":"부산",
+        "place":"해운대",
     },
     {
         "location":"제주도",
-        "name":"미남미녀",
-        "image":"",
+        "place":"금오름",
+    },
+    {
+        "location":"제주도",
+        "place":"협재 해수욕장",
     },
 ]

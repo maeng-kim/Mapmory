@@ -4,9 +4,9 @@
     <div class="container">
         <h1>회원가입</h1>
 
-        <form method="POST" action="{%url 'signup'%}">
+        <form method="POST" action="{%url 'signup' %}">
             {% csrf_token %}
-            Username : <br>
+            ID : <br>
             <input name="custom_id" type="text"><br>
             Password : <br>
             <input name="password" type="password"><br>
@@ -14,9 +14,7 @@
             <input name="password2" type="password"><br>
             E-mail : <br>
             <input name="email" type="text"><br>
-            Nickname : <br>
-            <input name="username" type="text"><br>
-            <a href='{% url "login" %}'><input type="submit" class="btn btn-primary" value="sign up"></a>
+            <input class="btn btn-primary" type="submit" value="회원가입">
         </form>
     </div>
 </body>

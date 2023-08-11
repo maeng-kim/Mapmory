@@ -1,5 +1,6 @@
 <!--검색창에 키워드 입력하면 search로 연결-->
 <form method='post' action={% url 'search' %}>
     {% csrf_token %}
-    <input type="" name="search_button" value="검색">
+    <input type="text" name="keyword">
+    <button type="submit">검색</button>
 </form>
