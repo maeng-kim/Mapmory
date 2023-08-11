@@ -7,4 +7,7 @@ class CustomUserAdmin(admin.ModelAdmin):
         'username',
         'password',
         'email',
+        'is_active',
+        'is_staff',
+        'is_superuser',
     )

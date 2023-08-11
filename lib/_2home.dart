@@ -1,11 +1,9 @@
-import 'package:example222/_5_1settings.dart';
-import 'package:example222/_6_1my_page.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import '_3_1writing.dart';
 import '_4_1recommend.dart';
-// import '_5_1settings.dart';
-// import '_6_1my_page.dart';
+import '_5_1settings.dart';
+import '_6_1my_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key, required this.title}) : super(key: key);

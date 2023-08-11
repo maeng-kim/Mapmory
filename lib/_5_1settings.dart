@@ -3,6 +3,11 @@ import '_2home.dart';
 import '_3_1writing.dart';
 import '_4_1recommend.dart';
 import '_6_1my_page.dart';
+import '_7_2settings.dart';
+import '_7_3settings.dart';
+import '_7_4settings.dart';
+import '_7_5settings.dart';
+import '_7_6settings.dart';
 
 class Settings1 extends StatefulWidget {
   const Settings1({Key? key, required this.title}) : super(key: key);
@@ -51,6 +56,278 @@ class Settings1State extends State<Settings1> {
             ),
             child: Stack(
               children: [
+                Positioned(
+                  left: 31,
+                  top: 139,
+                  child: Container(
+                    width: 334,
+                    height: 290,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xC9FFF0EF),
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                            width: 0.15, color: Color(0xCC545454)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      shadows: const [
+                        BoxShadow(
+                          color: Color(0x19000000),
+                          blurRadius: 25,
+                          offset: Offset(-4, 9),
+                          spreadRadius: -6,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 97,
+                  top: 73,
+                  child: Container(
+                    width: 204,
+                    height: 34,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x19000000),
+                          blurRadius: 25,
+                          offset: Offset(-4, 9),
+                          spreadRadius: -6,
+                        )
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 204,
+                          height: 34,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xC9FFF0EF),
+                            shape: RoundedRectangleBorder(
+                              side: const BorderSide(
+                                  width: 0.15, color: Color(0xCC545454)),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 175,
+                  top: 81,
+                  child: Text(
+                    '설정',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF545454),
+                      fontSize: 24,
+                      fontFamily: 'Gmarket Sans TTF',
+                      fontWeight: FontWeight.w500,
+                      height: 0.83,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 13,
+                  top: 380,
+                  child: SizedBox(
+                    width: 160,
+                    height: 46,
+                    child: Text(
+                      '자주 묻는 질문',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFF545454),
+                        fontSize: 16,
+                        fontFamily: 'Gmarket Sans TTF',
+                        fontWeight: FontWeight.w500,
+                        height: 1.25,
+                        letterSpacing: -0.50,
+                      ),
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 45,
+                  top: 321,
+                  child: Text(
+                    '보안',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF545454),
+                      fontSize: 16,
+                      fontFamily: 'Gmarket Sans TTF',
+                      fontWeight: FontWeight.w500,
+                      height: 1.25,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                ),
+                /*알림 설정 */
+                const Positioned(
+                  left: 31,
+                  top: 262,
+                  child: SizedBox(
+                    width: 89,
+                    height: 37,
+                    child: Text(
+                      '알림 설정',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFF545454),
+                        fontSize: 16,
+                        fontFamily: 'Gmarket Sans TTF',
+                        fontWeight: FontWeight.w500,
+                        height: 1.25,
+                        letterSpacing: -0.50,
+                      ),
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 45,
+                  top: 207,
+                  child: Text(
+                    '다크 모드',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF545454),
+                      fontSize: 16,
+                      fontFamily: 'Gmarket Sans TTF',
+                      fontWeight: FontWeight.w500,
+                      height: 1.25,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 45,
+                  top: 165,
+                  child: Text(
+                    '언어 설정',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF545454),
+                      fontSize: 16,
+                      fontFamily: 'Gmarket Sans TTF',
+                      fontWeight: FontWeight.w500,
+                      height: 1.25,
+                      letterSpacing: -0.50,
+                    ),
+                  ),
+                ),
+                Positioned(
+                    left: 320,
+                    top: 150,
+                    width: 50,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigator.pop(context);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NextScreen1(
+                                      title: 'hello',
+                                    )));
+                      },
+                      child: Image.asset('assets/image/bar3.png'),
+                    )), // 클릭 시
+
+                Positioned(
+                    left: 320,
+                    top: 200,
+                    width: 50,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NextScreen2(
+                                      title: 'hello',
+                                    )));
+                      },
+                      child: Image.asset('assets/image/bar3.png'),
+                    )),
+
+                Positioned(
+                    left: 320,
+                    top: 250,
+                    width: 50,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NextScreen3(
+                                      title: 'hello',
+                                    )));
+                      },
+                      child: Image.asset('assets/image/bar3.png'),
+                    )), // 클릭 시
+
+                Positioned(
+                  left: 320,
+                  top: 300,
+                  width: 50,
+                  height: 50,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NextScreen4(
+                                    title: 'hello',
+                                  )));
+                    }, // 클릭 시
+
+                    child: Image.asset('assets/image/bar3.png'),
+                  ),
+                ),
+                Positioned(
+                    left: 320,
+                    top: 365,
+                    width: 50,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NextScreen5(
+                                      title: 'hello',
+                                    )));
+                      },
+                      child: Image.asset('assets/image/bar3.png'),
+                    )), // 클릭 시
+
+                /*------------------비밀번호------------------*/
+                Positioned(
+                  left: 97,
+                  top: 73,
+                  child: Container(
+                    width: 204,
+                    height: 34,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x19000000),
+                          blurRadius: 25,
+                          offset: Offset(-4, 9),
+                          spreadRadius: -6,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
                 /*------------------하단바------------------*/
                 Positioned(
                   left: 30,
@@ -172,7 +449,6 @@ class Settings1State extends State<Settings1> {
                     ],
                   ),
                 ),
-                //
               ],
             ))
       ])),

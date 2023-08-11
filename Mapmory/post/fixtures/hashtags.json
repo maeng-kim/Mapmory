@@ -1,0 +1,23 @@
+[
+    {"model":"post.hashtag","pk":1,"fields":{"name":"#Silent"}},
+    {"model":"post.hashtag","pk":2,"fields":{"name":"#The_Hip"}},
+    {"model":"post.hashtag","pk":3,"fields":{"name":"#For_E"}},
+    {"model":"post.hashtag","pk":4,"fields":{"name":"#Noisy"}},
+    {"model":"post.hashtag","pk":5,"fields":{"name":"#Fancy"}},
+    {"model":"post.hashtag","pk":6,"fields":{"name":"#Comfortable"}},
+    {"model":"post.hashtag","pk":7,"fields":{"name":"#For_I"}},
+    {"model":"post.hashtag","pk":8,"fields":{"name":"#Lovely"}},
+    {"model":"post.hashtag","pk":9,"fields":{"name":"#Korean_Food"}},
+    {"model":"post.hashtag","pk":10,"fields":{"name":"#Chinese_Food"}},
+    {"model":"post.hashtag","pk":11,"fields":{"name":"#Western_Food"}},
+    {"model":"post.hashtag","pk":12,"fields":{"name":"#Japanese_Food"}},
+    {"model":"post.hashtag","pk":13,"fields":{"name":"#Good_for_Taking_Pictures"}},
+    {"model":"post.hashtag","pk":14,"fields":{"name":"#A_Group_Gathering"}},
+    {"model":"post.hashtag","pk":15,"fields":{"name":"#Good_To_Eat_Alone"}},
+    {"model":"post.hashtag","pk":16,"fields":{"name":"#Broad"}},
+    {"model":"post.hashtag","pk":17,"fields":{"name":"#Trendy"}},
+    {"model":"post.hashtag","pk":18,"fields":{"name":"#Good_View"}},
+    {"model":"post.hashtag","pk":19,"fields":{"name":"#Mukbang"}},
+    {"model":"post.hashtag","pk":20,"fields":{"name":"#Good_for_dating"}},
+    {"model":"post.hashtag","pk":21,"fields":{"name":"#Funny"}}
+]

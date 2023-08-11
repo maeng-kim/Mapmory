@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import '_2home.dart';
 import '_0membership.dart';
 
@@ -11,6 +13,48 @@ class MyLogin extends StatefulWidget {
 }
 
 class MyLoginState extends State<MyLogin> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String responseData = '';
+
+  void performLogin() async {
+    String username = usernameController.text;
+    String password = passwordController.text;
+
+    // 서버로 보낼 데이터를 Map 형태로 구성하기
+    Map<String, String> data = {
+      'username': username,
+      'password': password,
+    };
+
+    // 백엔드 URL을 설정
+    String backendUrl = 'http://127.0.0.1:8000/accounts/login/';
+
+    // HTTP POST 요청을 보내기
+    final response = await http.post(Uri.parse(backendUrl), body: data);
+
+    if (response.statusCode == 200) {
+      // 서버에서의 응답을 파싱하기
+      Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+      String loginResult = jsonResponse['result'];
+
+      // 로그인 결과 처리하기
+      setState(() {
+        responseData = loginResult;
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => const HomeScreen(
+                      title: 'Next',
+                    )));
+      });
+    } else {
+      setState(() {
+        responseData = '로그인에 실패했습니다.';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +94,7 @@ class MyLoginState extends State<MyLogin> {
             ),
             child: Stack(
               children: [
+                Text(responseData),
                 /*------------------로그인------------------*/
                 Positioned(
                   left: 160,
@@ -58,6 +103,7 @@ class MyLoginState extends State<MyLogin> {
                   height: 25,
                   child: TextButton(
                     onPressed: () {
+                      performLogin;
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -92,14 +138,13 @@ class MyLoginState extends State<MyLogin> {
                 ),
 
                 /*------------------아이디------------------*/
+
                 Positioned(
                   left: 60.66,
                   top: 426,
                   child: Container(
-                    //그림자 넣기 위해선 Container 필요, 위치 설정을 위해선 Positioned 필요, child: TextField를 무조건 넣어야함 씨부레. 3개 동시에 적용 어케함?
                     width: 277.34,
                     height: 32,
-
                     decoration: const BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -116,7 +161,9 @@ class MyLoginState extends State<MyLogin> {
                         )
                       ],
                     ),
-                    child: TextField(
+                    child: TextFormField(
+                      controller: usernameController,
+                      key: const ValueKey(1),
                       decoration: InputDecoration(
                           hintText: '아이디',
                           contentPadding: const EdgeInsets.symmetric(
@@ -162,7 +209,9 @@ class MyLoginState extends State<MyLogin> {
                         )
                       ],
                     ),
-                    child: TextField(
+                    child: TextFormField(
+                      controller: passwordController,
+                      key: const ValueKey(2),
                       decoration: InputDecoration(
                         hintText: '비밀번호',
                         contentPadding: const EdgeInsets.symmetric(

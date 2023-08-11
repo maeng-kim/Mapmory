@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mapmory',
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: const MyLogin(title: 'Flutter Demo Home Page'),
+      home: const MyLogin(title: 'Mapmory Start'),
     );
   }
 }

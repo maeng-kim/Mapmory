@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hashtag Selection</title>
+</head>
+<body>
+    <h1>해시태그 선택</h1>
+
+    <div id="hashtag-container"></div>
+
+    <button onclick="submitSelection()">다음</button>
+
+    <script>
+        // JSON 데이터를 변수에 정의
+        let hashtagsData = [
+            {"model":"post.hashtag","pk":1,"fields":{"name":"#Silent"}},
+            {"model":"post.hashtag","pk":2,"fields":{"name":"#The_Hip"}},
+            {"model":"post.hashtag","pk":3,"fields":{"name":"#For_E"}},
+            {"model":"post.hashtag","pk":4,"fields":{"name":"#Noisy"}},
+            {"model":"post.hashtag","pk":5,"fields":{"name":"#Fancy"}},
+            {"model":"post.hashtag","pk":6,"fields":{"name":"#Comfortable"}},
+            {"model":"post.hashtag","pk":7,"fields":{"name":"#For_I"}},
+            {"model":"post.hashtag","pk":8,"fields":{"name":"#Lovely"}},
+            {"model":"post.hashtag","pk":9,"fields":{"name":"#Korean_Food"}},
+            {"model":"post.hashtag","pk":10,"fields":{"name":"#Chinese_Food"}},
+            {"model":"post.hashtag","pk":11,"fields":{"name":"#Western_Food"}},
+            {"model":"post.hashtag","pk":12,"fields":{"name":"#Japanese_Food"}},
+            {"model":"post.hashtag","pk":13,"fields":{"name":"#Good_for_Taking_Pictures"}},
+            {"model":"post.hashtag","pk":14,"fields":{"name":"#A_Group_Gathering"}},
+            {"model":"post.hashtag","pk":15,"fields":{"name":"#Good_To_Eat_Alone"}},
+            {"model":"post.hashtag","pk":16,"fields":{"name":"#Broad"}},
+            {"model":"post.hashtag","pk":17,"fields":{"name":"#Trendy"}},
+            {"model":"post.hashtag","pk":18,"fields":{"name":"#Good_View"}},
+            {"model":"post.hashtag","pk":19,"fields":{"name":"#Mukbang"}},
+            {"model":"post.hashtag","pk":20,"fields":{"name":"#Good_for_dating"}},
+            {"model":"post.hashtag","pk":21,"fields":{"name":"#Funny"}},
+        ];
+
+        let selectedHashtags = [];
+
+        function createHashtagCheckboxes() {
+            const container = document.getElementById('hashtag-container');
+            let checkboxesHTML = '';
+
+            // 해시태그 체크박스 생성
+            hashtagsData.forEach(hashtag => {
+                const name = hashtag.fields.name;
+                checkboxesHTML += `<input type="checkbox" name="hashtags" value="${name}">
+                                  <label>${name}</label><br>`;
+            });
+
+            container.innerHTML = checkboxesHTML;
+        }
+
+        function submitSelection() {
+            const checkboxes = document.getElementsByName('hashtags');
+
+            selectedHashtags = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            if (selectedHashtags.length >= 3) {
+                const custom_id = 'your_custom_id'; // 여기에 실제 custom_id 값을 넣어주세요.
+                const createPostUrl = `/create_post/${custom_id}/`;
+                location.href = createPostUrl;
+            } else {
+                alert('3개 이상 선택하셈');
+            }
+        }
+
+
+        window.onload = createHashtagCheckboxes;
+    </script>
+</body>
+</html>
