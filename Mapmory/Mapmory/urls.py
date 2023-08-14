@@ -20,8 +20,8 @@ from django.conf import settings
 from accounts import views
 from recommend import views
 from config import views
-from django.conf.urls.static import static
-from django.conf import settings
+from post import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,7 @@ urlpatterns = [
     path('recommend/', include('recommend.urls')),
     path('config/', include('config.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
+    path('post/', include('post.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
