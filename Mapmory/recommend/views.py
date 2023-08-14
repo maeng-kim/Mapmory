@@ -10,7 +10,7 @@ def search(request):
                tag = Tag.objects.filter(tag_content=keyword)
                post= Post.objects.filter(tagging__in = tag).order_by('-posting_date') # 해당 태그를 가진 post 저장
 
-               return render(request, 'post/search_result.html', {'post':post, 'keyword':keyword})
+               return render(request, 'search_result.html', {'keyword':keyword})
             else:
                return render(request, 'no_search.html')
         elif request.method == 'GET':

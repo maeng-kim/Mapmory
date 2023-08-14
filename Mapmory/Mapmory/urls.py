@@ -21,8 +21,6 @@ from accounts import views
 from recommend import views
 from config import views
 from post import views
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('rest_framework.urls')),
@@ -32,5 +30,3 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('post/', include('post.urls')),
 ]
-
-urlpatterns += staticfiles_urlpatterns()

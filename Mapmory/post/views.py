@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect, get_object_or_404
-from .models import Post,Hashtag
+from .models import Post,Hashtag,Tag
 from .forms import PostForm
 from accounts.models import CustomUser
 from django.contrib.auth.decorators import login_required
@@ -65,6 +65,18 @@ def create_post(request, username):
             post = form.save(commit=False)
             post.writer = request.user
             post.save()
+            
+            # 지역, 추천 장소 해시태그로 처리
+           # content = request.POST.get('posting_content') # 본문을 content에 저장
+           # c_list = content.split(' ') # 공백으로 분리
+          #  for c in c_list:
+               # if '#' in c: # 만약 #이 붙어있으면 tag 객체를 이용하여 저장한다
+                #    tag = Tag() 
+                   # tag.tag_content = c
+                  #  tag.save()
+  
+             #       post_ = Post.objects.get(pk=post.pk)
+                 #   post_.tagging.add(tag)
             #form.save_m2m() #ManyToManyField에 저장
             for hashtag_name in selected_hashtags:
                 hashtag, created = Hashtag.objects.get_or_create(name=hashtag_name)
