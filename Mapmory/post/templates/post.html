@@ -7,8 +7,13 @@
     <h1>글 작성 페이지</h1>
     <div>
         <p>선택한 해시태그:</p>
-        <p>{{ selected_hashtags | safe }}</p>
+        <ul>
+        {% for hashtag in selected_hashtags %}
+            <li>{{ hashtag }}</li>
+        {% endfor %}
+        </ul>
     </div>
+    <br>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

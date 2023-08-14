@@ -1,29 +1,25 @@
-{% load static%}
-<!DOCTYPE hTML>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-  </head>
-  <body>
-    <form method='post' action={% url 'search' %}>
-      {% csrf_token %}
-      <input type="text" name="keyword">
-    </form>
-    {% if name %}
-        <h1>{{ name }}</h1>
-        <p>{{ description }}</p>
-        
-        <h2>추천 장소</h2>
-        {% for place in recommended_places %}
-            <h3>{{ place.name }}</h3>
-            <ul>
-                {% for image in place.images %}
-                    <img src="{% static image %}" alt="{{ place.name }} 이미지" style="width: 300px; height: auto;">
-                {% endfor %}
-            </ul>
+{% block content %}
+    <div class="content">
+      <div id="hashtag_posting">
+       {% if post_ %}
+       <img id="photo" src="{{ post_.posting_photo.url }}">
+       {% else %}
+       <img id="photo">
+       {% endif %}
+       <div id="hashtag">{{ keyword }}</div>
+       <div id="hashtag_count">게시글 {{ post.count }}개</div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div id="title">{{ keyword }}과 관련된 게시물</div>
+
+      <div class="image_box">
+        {% for post in post.all %}
+        <img id="image_box" src="{{ post.posting_photo.url }}">
         {% endfor %}
-    {% else %}
-       <p>검색 결과가 존재하지 않습니다.</p>
-    {% endif %}
-  </body>
-</html>
+      </div>
+    </div>
+{% endblock %}
