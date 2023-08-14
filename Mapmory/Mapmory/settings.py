@@ -134,3 +134,4 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login_view'  # 로그인 URL을 실제로 사용하는 이름으로 변경
 LOGOUT_URL = 'login_view'  # 로그아웃 URL을 실제로 사용하는 이름으로 변경
+
