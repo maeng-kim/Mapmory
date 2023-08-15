@@ -1,6 +1,5 @@
 # views.py
 from django.shortcuts import redirect, render
-from post.models import Post
 
 def search(request):
     if request.method == 'POST':
