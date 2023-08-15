@@ -66,8 +66,8 @@
 
             if (selectedHashtags.length >= 3) {
                 const createPostUrl = `/post/create_post/${username}/`; 
-                location.href = createPostUrl; 
-                document.getElementById("hashtagForm"), submit();
+               /* location.href = createPostUrl; */
+                document.getElementById("hashtagForm").submit();
             } else {
                 alert('3개 이상 선택하셈');
             }

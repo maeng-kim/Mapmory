@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect, get_object_or_404
-from .models import Post,Hashtag,Tag
+from .models import Post,Hashtag
 from .forms import PostForm
 from accounts.models import CustomUser
 from django.contrib.auth.decorators import login_required
@@ -22,7 +22,7 @@ def post_form_view(request):
     if request.method == 'POST':
         selected_hashtags = request.POST.getlist('hashtags')
         request.session['selected_hashtags'] = selected_hashtags
-        return redirect('create_post', username=request.user.id)
+        return redirect('post:create_post', username=request.user.id)
     return render(request, 'hashtag.html', {'hashtags':hashtags})
 
 #json 데이터 확인
@@ -52,39 +52,32 @@ def get_hashtag_json(request):
     ]
     return JsonResponse(hashtag, safe=False) 
 
+@login_required
 def create_post(request, username):
     #print(custom_id)
     user = get_object_or_404(CustomUser, pk=username)
     #custom_id = custom_id
 
     selected_hashtags = request.session.get('selected_hashtags',[])
-    print(selected_hashtags)
     if request.method == 'POST':
         form = PostForm(request.POST)
+        #form = PostForm(request.POST, selected_hashtags=selected_hashtags)
         if form.is_valid():
             post = form.save(commit=False)
             post.writer = request.user
             post.save()
             
-            # 지역, 추천 장소 해시태그로 처리
-           # content = request.POST.get('posting_content') # 본문을 content에 저장
-           # c_list = content.split(' ') # 공백으로 분리
-          #  for c in c_list:
-               # if '#' in c: # 만약 #이 붙어있으면 tag 객체를 이용하여 저장한다
-                #    tag = Tag() 
-                   # tag.tag_content = c
-                  #  tag.save()
-  
-             #       post_ = Post.objects.get(pk=post.pk)
-                 #   post_.tagging.add(tag)
+                    
             #form.save_m2m() #ManyToManyField에 저장
             for hashtag_name in selected_hashtags:
                 hashtag, created = Hashtag.objects.get_or_create(name=hashtag_name)
                 post.hashtag.add(hashtag)
-            return redirect('end')
+            return redirect('post:end')
     else:
         form = PostForm()
+        #form = PostForm(selected_hashtags=selected_hashtags)
     return render(request, 'post.html', {'username':username,'form':form, 'selected_hashtags':selected_hashtags})
 
-
+def end_view(request):
+    return render(request, 'end.html')
 
