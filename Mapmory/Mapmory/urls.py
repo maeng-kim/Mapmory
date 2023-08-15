@@ -20,7 +20,6 @@ from django.conf import settings
 from accounts import views
 from recommend import views
 from config import views
-from post import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('rest_framework.urls')),
@@ -28,5 +27,4 @@ urlpatterns = [
     path('recommend/', include('recommend.urls')),
     path('config/', include('config.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('post/', include('post.urls')),
 ]
