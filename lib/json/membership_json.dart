@@ -5,10 +5,10 @@ import 'package:mapmory/_1login.dart';
 
 class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  MembershipState createState() => MembershipState();
 }
 
-class _MyFormState extends State<MyForm> {
+class MembershipState extends State<MyForm> {
   // final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   final TextEditingController customIdController = TextEditingController();

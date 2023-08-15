@@ -1,0 +1,206 @@
+/*마이페이지제목*/
+.mypagetext > .mypagetextback{
+    width: 204px; height: 34px; 
+    left: 0px; top: 0px; 
+    position: absolute; 
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10); 
+    justify-content: center; 
+    align-items: center; 
+    display: inline-flex;
+    width: 204px; height: 34px; 
+    background: rgba(255, 240, 239, 0.79); 
+    border-radius: 50px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+
+.mypagetext > .text{
+    left: 44px; top: 8px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 24px;
+    font-weight: 500; 
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+/*내 프로필*/
+.myinfo > .profileback{
+    width: 334px; height: 242px; 
+    left: 0px; top: 0px; 
+    position: absolute; 
+    background: rgba(255, 240, 239, 0.79); 
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10); 
+    border-radius: 10px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+
+
+.myinfo > .profileimage{
+    width: 84.66px; height: 80.23px; 
+    left: 9.34px; top: 9.57px; 
+    position: absolute; 
+    background: #ECECEC; 
+    border-radius: 9999px;
+}
+
+.myinfo > .nickname{
+    width: 65px; height: 17px; 
+    left: 99px; top: 16px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 16px;
+    font-weight: 500; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+.myinfo > .age{
+    width: 50px; height: 27px; 
+    left: 9px; top: 121.50px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 16px;
+    font-weight: 500; 
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.myinfo > .style{
+    width: 92px; height: 27px; 
+    left: 10px; top: 160.50px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 16px;
+    font-weight: 500; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+.myinfo > .keyword{
+    width: 164px; height: 27px; 
+    left: 8px; top: 201.50px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 16px;
+    font-weight: 500; 
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.myinfo > .mypageeditbtn{
+    width: 127px; height: 23px;
+    left: 96px; top: 71px; 
+    position: absolute;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06); 
+    justify-content: center; 
+    align-items: center; 
+    display: inline-flex;
+    background: #FFFFEA; 
+    border-radius: 50px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+    font-size: 12px;
+    padding: 1px;
+    color: #545454;
+}
+
+/*내가 쓴 글 보기*/
+
+
+.mywriting > .mywritingback{
+    width: 334px; height: 240px; 
+    left: 0px; top: 0px; 
+    position: absolute;
+    background: rgba(255, 240, 239, 0.79); 
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10); 
+    border-radius: 10px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+.mywriting > .text{
+    width: 109px; height: 27px; 
+    left: 13px; top: 25.50px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 16px;
+    font-weight: 500; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+.mywriting > .l{
+    width: 311px; height: 0px;
+    left: 9px; 
+    position: absolute; 
+    border: 0.50px #CDC5C5 solid;
+}
+
+.mywriting > .w{
+    width: 33px; height: 29px; 
+    left: 13px; 
+    position: absolute
+}
+
+.mywriting > .w > .title{
+    left: 0px; top: 0px; 
+    position: absolute; 
+    color: black; 
+    font-size: 12px; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}  
+
+.mywriting > .w > .mainText{
+    left: 3px; top: 17px; 
+    position: absolute; 
+    color: black; 
+    font-size: 5px; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}  
+
+.mywriting > .material-icons{
+    width: 10.85px; height: 10.50px; 
+    left: 199.90px; top: 210.25px; 
+    position: absolute; 
+    color: #545454;
+}
+
+.mywriting > .num > .n{
+    width: 7px; height: 14px; 
+    top: 0px; 
+    position: absolute; 
+    color: black; 
+    font-size: 20px; 
+    font-weight: 300; 
+    word-wrap: break-word;
+}
+
+
+/*네비바*/
+.naviBar > .naviBackground{
+    width: 322px; height: 40px; 
+    padding-left: 14px; padding-right: 14px; padding-top: 12px; padding-bottom: 12px; 
+    left: 0px; top: 0px; position: absolute; 
+    background: rgba(250, 223, 222, 0.69); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+    border-radius: 100px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+     gap: 10px; 
+     display: inline-flex
+}
+
+.naviBar > .material-icons{
+    color: rgba(84.26, 84.26, 84.26, 0.80);
+    font-size: 30px;
+    position: absolute;
+    width: 26px; height: 26px;
+    top: 19px;
+}

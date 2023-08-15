@@ -1,17 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
-<head>
-</head>
-<body>
-    <div class="container">
-        <h1>로그인</h1>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--배경색, 폰트-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <!--로그인-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/_1login.css' %}">
 
+        
+        
+    </head>
+    <body>
         <form method="POST" action="{% url 'login_view' %}">
             {% csrf_token %}
-            <label for="username">ID:</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">로그인</button>
+            <!--아이디입력-->
+            <input type="text" id="username" name="username" required class="loginInfo" style="left: 54px; top: 458px; position: absolute" placeholder="아이디">
+            </input>
+
+            <!--비밀번호입력--> 
+            <input type="password" id="password" name="password" required class="loginInfo" style="left: 54px; top: 511px; position: absolute" placeholder="비밀번호" type="password">
+            </input>
+
+            <!--로그인버튼-->
+            <div class = "loginBtn">
+                <button type="submit">로그인</button>
+            </div>
+
+            <!--토순이 이미지-->
+            <img class="Tosun" style="width: 150px; height: 158px; left: 54px; top: 130px; 
+                position: absolute" src = "../../static/img/tosun.png" alt="토순이입니다."/>
+
+
+            <!--회원가입버튼-->
+            <div class = "membershipBtn">
+                <a a href={% url 'signup' %}>
+                    회원가입
+                </a>
+            </div>
+
+
+            <!--맵모리텍스트-->
+            <div style="width: 151px; height: 29px; left: 206px; top: 194.50px; 
+                position: absolute; text-align: center; font-size: 32px; 
+                font-weight: 500; line-height: 20px; word-wrap: break-word">
+                맵모리
+            </div>
+
+            <!--맵모리 소개 멘트 텍스트-->
+            <div class="Mapmory" style="width: 300px; left: 71px; top: 318.50px; position: absolute; text-align: center">
+                <span style=" font-size: 13px;  
+                    font-weight: 100; line-height: 20px; word-wrap: break-word">
+                    당신의 추억을 지도로 그리는, 당신의
+                </span>
+                <span style=" font-size: 13px; 
+                    font-weight: 900; line-height: 20px; word-wrap: break-word">
+                    Mapmory<br/>
+                </span> 
+                <span style=" font-size: 13px;  
+                    font-weight: 100; line-height: 20px; word-wrap: break-word">
+                    지금 시작하세요.
+                </span>
+            </div>
         </form>
-    </div>
-</body>
+        
+    </body>
+</html>

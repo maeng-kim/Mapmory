@@ -1,0 +1,106 @@
+.group1 > .hashtag1 > .b{
+    width: 65.53px; 
+    height: 119.85px;
+    position: absolute; 
+    background: rgba(255, 255, 234, 0.86); 
+    border-radius: 10px;
+}
+
+.group1 > .hashtag1 > .box1{
+    width: 311px; 
+    height: 131px; 
+    left: 0px; top: 0px; 
+    position: absolute; 
+    background: rgba(210, 232, 154, 0.79); 
+    border-radius: 10px;
+     border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+
+.group1 > .hashtag1 > .hashtag1Text{
+    width: 85px; 
+    left: 0px; top: 0px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 18px; 
+    font-weight: 300; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+
+.group2 > .hashtag2 > .hashtag2Text{
+    left: 0px; top: 0px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 18px; 
+    font-weight: 300; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+
+.group2 > .hashtag2 > .b{
+    width: 65.53px; 
+    height: 119.85px;
+    position: absolute; 
+    background: rgba(255, 255, 234, 0.86); 
+    border-radius: 10px;
+}
+
+.group2 > .hashtag2 > .box2{
+    width: 311px; height: 131px; left: 0px; top: 0px; position: absolute; background: rgba(210, 232, 154, 0.79); border-radius: 10px; border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+
+
+.icon > .donggrami{
+    width: 234.25px; height: 231.33px; left: 0px; top: 0px; 
+    position: absolute; background: #FFFDD1; 
+    border-radius: 9999px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+}
+
+.icon > .material-icons{
+    width: 50.53px; height: 37.85px; 
+    left: 84.46px; top: 67.08px; 
+    position: absolute;
+    font-size: 70px;
+    font-weight: 500;
+}
+.text{
+    left: 44px; top: 283px; 
+    position: absolute; 
+    text-align: center; 
+    color: #A5A5A5; 
+    font-size: 12px; 
+    font-weight: 300; 
+    line-height: 20px; 
+    word-wrap: break-word;
+}
+
+/*네비바*/
+.naviBar > .naviBackground{
+    width: 322px; height: 40px; 
+    padding-left: 14px; padding-right: 14px; padding-top: 12px; padding-bottom: 12px; 
+    left: 0px; top: 0px; position: absolute; 
+    background: rgba(250, 223, 222, 0.69); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+    border-radius: 100px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+     gap: 10px; 
+     display: inline-flex
+}
+
+.naviBar > .material-icons{
+    color: rgba(84.26, 84.26, 84.26, 0.80);
+    font-size: 30px;
+    position: absolute;
+    width: 26px; height: 26px;
+    top: 19px;
+}
+
+

@@ -1,80 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Hashtag Selection</title>
-    <script>
-        var username = "{{ request.user.id }}";
-    </script>    
-</head>
-<body>
-    <h1>해시태그 선택</h1>
+    <head>
+        <title>Hashtag Selection</title>
+        <!--배경색, 폰트-->
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <!--아이콘-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--글쓰기->해시태그선택-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/_3_2wirting_hashtag.css' %}">
+    
+        <script>
+            var username = "{{ request.user.id }}";
+        </script>
+    </head>
+    <body>
 
-    <form id="hashtagForm" method="post" action="{% url 'post:post_form' %}">
-        <div id="hashtag-container"></div>
-        <button type="button" onclick="submitSelection()">다음</button>
-        {% csrf_token %}
-    </form>
+        <!--등록-->
+        <div class="btn" >
+            <form id="hashtagForm" method="post" action="{% url 'post:post_form' %}">
+                <div id="hashtag-container"></div>
+                <a type="button" style="left: 314px; top: 72px;" onclick="submitSelection()">등록</a>
+                {% csrf_token %}
+            </form>
+        </div>
 
-    <script>
-        // JSON 데이터를 변수에 정의
-        let hashtagsData = [
-            {"model":"post.hashtag","pk":1,"fields":{"name":"#Silent"}},
-            {"model":"post.hashtag","pk":2,"fields":{"name":"#The_Hip"}},
-            {"model":"post.hashtag","pk":3,"fields":{"name":"#For_E"}},
-            {"model":"post.hashtag","pk":4,"fields":{"name":"#Noisy"}},
-            {"model":"post.hashtag","pk":5,"fields":{"name":"#Fancy"}},
-            {"model":"post.hashtag","pk":6,"fields":{"name":"#Comfortable"}},
-            {"model":"post.hashtag","pk":7,"fields":{"name":"#For_I"}},
-            {"model":"post.hashtag","pk":8,"fields":{"name":"#Lovely"}},
-            {"model":"post.hashtag","pk":9,"fields":{"name":"#Korean_Food"}},
-            {"model":"post.hashtag","pk":10,"fields":{"name":"#Chinese_Food"}},
-            {"model":"post.hashtag","pk":11,"fields":{"name":"#Western_Food"}},
-            {"model":"post.hashtag","pk":12,"fields":{"name":"#Japanese_Food"}},
-            {"model":"post.hashtag","pk":13,"fields":{"name":"#Good_for_Taking_Pictures"}},
-            {"model":"post.hashtag","pk":14,"fields":{"name":"#A_Group_Gathering"}},
-            {"model":"post.hashtag","pk":15,"fields":{"name":"#Good_To_Eat_Alone"}},
-            {"model":"post.hashtag","pk":16,"fields":{"name":"#Broad"}},
-            {"model":"post.hashtag","pk":17,"fields":{"name":"#Trendy"}},
-            {"model":"post.hashtag","pk":18,"fields":{"name":"#Good_View"}},
-            {"model":"post.hashtag","pk":19,"fields":{"name":"#Mukbang"}},
-            {"model":"post.hashtag","pk":20,"fields":{"name":"#Good_for_dating"}},
-            {"model":"post.hashtag","pk":21,"fields":{"name":"#Funny"}},
-        ];
-
-        let selectedHashtags = [];
-
-        function createHashtagCheckboxes() {
-            const container = document.getElementById('hashtag-container');
-            let checkboxesHTML = '';
-
-            // 해시태그 체크박스 생성
-            hashtagsData.forEach(hashtag => {
-                const name = hashtag.fields.name;
-                checkboxesHTML += `<input type="checkbox" name="hashtags" value="${name}">
-                                  <label>${name}</label><br>`;
-            });
-
-            container.innerHTML = checkboxesHTML;
-        }
-
-        function submitSelection() {
-            const checkboxes = document.getElementsByName('hashtags');
-
-            selectedHashtags = Array.from(checkboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-
-            if (selectedHashtags.length >= 3) {
-                const createPostUrl = `/post/create_post/${username}/`; 
-               /* location.href = createPostUrl; */
-                document.getElementById("hashtagForm").submit();
-            } else {
-                alert('3개 이상 선택하셈');
-            }
-        }
+        <!--네비바-->
+        <div class="naviBar" style="width: 332px; height: 59px; left: 20px; top: 689.50px; position: absolute">
+            <div class="naviBackground"></div>
+            <span class="material-icons" style="left: 20px;" onclick="location.href='../html/_3_1writing.html';">edit</span>
+            <span class="material-icons" style="left: 90px;" onclick="location.href='../html/_4_1recommend.html';">location_on</span>
+            <span class="material-icons" style="left: 160px;" onclick="location.href='../html/_2home.html';">home</span>
+            <span class="material-icons" style="left: 230px;" onclick="location.href='../html/_6_1myPage.html';">person</span>
+            <span class="material-icons" style="left: 300px;" onclick="location.href='../html/_5settings.html';">settings</span>
+        </div>
 
 
-        window.onload = createHashtagCheckboxes;
-    </script>
-</body>
+
+        <script type="text/javascript" src="../../static/js/_3_2writing_hashtag.js"></script>
+    </body>
 </html>

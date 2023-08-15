@@ -1,0 +1,22 @@
+.container > .membershipInfo{
+    width: 231px; height: 33px; 
+    left: 130px; top: 212px; position: absolute; 
+    background: #FFFFEA; 
+    border-radius: 15px; border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
+    border: none;
+    float: left;
+}
+
+.btn{
+    width: 50px; 
+    height: 27px; 
+    left: 311px; top: 307.50px;
+    position: absolute; 
+    background: #FFFFEA; 
+    border-radius: 50px; 
+    border-color: #FFFFEA;
+    font-size: 16px; 
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06);
+}

@@ -1,0 +1,39 @@
+.myMap {
+    width: 151px; 
+    height: 29px; 
+    left: 71px; top: 91px; position: absolute; 
+    text-align: center; color: #545454; font-size: 32px; font-family: Gmarket Sans TTF; font-weight: 500;
+    line-height: 20px; word-wrap: break-word;
+}
+
+
+.IconLocationPin > .material-icons{
+    width: 40.10px; height: 36.81px; 
+    left: 44px; top: 83px; position: absolute; 
+    font-size: 30px;
+    color: #D2E89A
+}
+
+/*네비바*/
+.naviBar > .naviBackground{
+    width: 322px; height: 40px; 
+    padding-left: 14px; padding-right: 14px; padding-top: 12px; padding-bottom: 12px; 
+    left: 0px; top: 0px; position: absolute; 
+    background: rgba(250, 223, 222, 0.69); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+    border-radius: 100px; 
+    border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+     gap: 10px; 
+     display: inline-flex
+}
+
+.naviBar > .material-icons{
+    color: rgba(84.26, 84.26, 84.26, 0.80);
+    font-size: 30px;
+    position: absolute;
+    width: 26px; height: 26px;
+    top: 19px;
+}

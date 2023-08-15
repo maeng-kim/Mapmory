@@ -1,0 +1,38 @@
+.loginBtn > button{
+    width: 78px; 
+    height: 27px; 
+    left: 158px; top: 567px;
+    position: absolute; 
+    background: #FFFFEA; 
+    border-radius: 50px; 
+    border-color: #FFFFEA;
+    font-size: 16px; font-weight: 500; text-align: center;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06)
+}
+
+.membershipBtn > a{
+    width: 211px; 
+    height: 24px; 
+    left: 93px; top: 606px; 
+    position: absolute; 
+    text-align: center; 
+    color: #545454; 
+    font-size: 14px; 
+    font-weight: 500; 
+    line-height: 20px; 
+    word-wrap: break-word; 
+    background: none; border-color: none;
+    text-decoration: none;
+}
+
+.loginInfo {
+    width: 278.34px; 
+    height: 32px; 
+    background: #FFFFEA;
+    border-radius: 50px; 
+    font-size: 16px; 
+    font-weight: 500; text-align: left; 
+    padding-top: 9px; padding-left: 7px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06);
+    border: none;
+}

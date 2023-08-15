@@ -1,0 +1,13 @@
+@font-face {
+    font-family:'Gmarket Sans TTF';
+    src: url("../fonts/GmarketSansTTFMedium.ttf"), url("../fonts/GmarketSansTTFBold.ttf"), url("../fonts/GmarketSansTTFLight.ttf");
+  }
+
+html > body{
+    font-family: 'Gmarket Sans TTF';
+    width: 393px; 
+    height: 900px; 
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.69) 0%, rgba(248.33, 242.49, 242.27, 0.69) 40%, rgba(250, 223, 222, 0.79) 84%, rgba(250, 223, 222, 0.79) 100%); 
+}
+
