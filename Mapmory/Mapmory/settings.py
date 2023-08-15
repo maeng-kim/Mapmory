@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'accounts',
-    'recommend',
     'config',
 ]
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -56,7 +55,7 @@ LOGOUT_URL = 'login_view'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware', 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,15 +122,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # 기본 설정 언어
 LANGUAGE_CODE = 'ko' 
 
-# 지원할 언어
 LANGUAGES = [
     ('ko', 'Korean'),
     ('en', 'English'),
 ]
 
-# 번역 관련 파일들을 관리할 경로
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
-
+LOCALE_PATH = [os.path.join(BASE_DIR, 'locale')]
 #언어 설정 세션
 LANGUAGE_SESSION_KEY = 'my_language'
 
