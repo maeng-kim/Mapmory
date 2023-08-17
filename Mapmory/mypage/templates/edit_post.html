@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -11,12 +12,14 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/_6_3myPage_writingEdit.css' %}">
     </head>
     <body>
+        {% block contents %}
         <!--마이페이지제목-->
         <div class="mypagetext" style="width: 204px; height: 34px; left: 97px; top: 73px; position: absolute">
             <div class="mypagetextback">
                 <div class="back"></div>
             </div>
-            <div class="text">마이페이지</div>
+            {}
+            <div class="text">{% trans "마이페이지" %}</div>
         </div>
 
 
@@ -38,16 +41,14 @@
                     <div class="locationText">{{ form.location.label_tag }}</div>
                     <div class="locationWriting">{{ form.location }}</div>
                 </div>
-
-                <div class="images">
-                    {% for photo in post.photo_set.all %}
-                        <img src="{{ photo.image.url }}" alt="이미지 없음">
-                    {% endfor %}
-                </div>                
-
             </div>
 
-            <button type="submit">수정하기</button>
+            {% for photo in photos %}
+                <img src="{{ photos.image.url }}" alt="Post Photo" width="200">
+            {% endfor %}
+
+            <button type="submit">{% trans "수정하기" %}</button>
+            {% endblock %}
         </form>
     </body>
 </html>

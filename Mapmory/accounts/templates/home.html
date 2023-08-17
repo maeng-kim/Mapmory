@@ -1,5 +1,7 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
+
 <head>
     <title>홈화면</title>
     <!--배경색, 폰트-->
@@ -11,9 +13,11 @@
 
 </head>
 <body>
+    {%block contents%}
     <!--나의지도 텍스트-->
-    <div class="myMap">맵모리</div>
-
+    <div class="myMap"style="font-size:25px">{% trans "맵모리" %}</div>
+    
+    {% endblock %}
     <!--위치아이콘-->
     <div class="IconLocationPin">
         <span class="material-icons">
@@ -60,32 +64,29 @@
             
         });
     </script>
+
+<!--네비바-->
+<div class="naviBackground">
+
+    <a href={% url 'post:post_form' %}>
+        <span class="material-icons" style="left: 20px;">edit</span>
+    </a>
+
+    <a href={% url 'recommend:search' %}>
+        <span class="material-icons" style="left: 90px;">search</span>
+    </a>
     
 
+    <a href={% url 'accounts:home' %} >
+        <span class="material-icons" style="left: 160px;">home</span>
+    </a>
 
-    <!--네비바-->
-    <div class="naviBackground">
-
-        <a href={% url 'post:post_form' %}>
-            <span class="material-icons" style="left: 20px;">edit</span>
-        </a>
-
-        <a href={% url 'recommend:search' %}>
-            <span class="material-icons" style="left: 90px;">search</span>
-        </a>
-        
-
-        <a href={% url 'accounts:home' %} >
-            <span class="material-icons" style="left: 160px;">home</span>
-        </a>
-
-        <a href={% url 'mypage:mypage' %} >
-            <span class="material-icons" style="left: 230px;">person</span>
-        </a>
-        <a href={% url 'settings:config_home' %}>
-            <span class="material-icons" style="left: 300px;">settings</span>
-        </a>
-        
-    </div>
-
+    <a href={% url 'mypage:mypage' %} >
+        <span class="material-icons" style="left: 230px;">person</span>
+    </a>
+    <a href={% url 'settings:config_home' %}>
+        <span class="material-icons" style="left: 300px;">settings</span>
+    </a>
+    
+</div>
 </body>

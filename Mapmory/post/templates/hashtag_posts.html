@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -12,8 +13,9 @@
 </head>
 <body>
     <!--텍스트-->
-    <div class="text">*다음은 해시태그를 기반으로 회원님께 추천되는 게시물입니다.</div>
-    
+    {% block contents %}
+    <div class="text">*{% trans "다음은 해시태그를 기반으로 회원님께 추천되는 게시물입니다" %}.</div>
+    {% endblock%}
     <!--아이콘-->
     <div class="icon" style="width: 234.25px; height: 231.33px; left: 79px; top: 37px; position: absolute">
         <div class="donggrami"></div>

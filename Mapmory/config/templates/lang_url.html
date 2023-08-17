@@ -1,38 +1,42 @@
-
-
+{% extends "base.html"%}
+{% load i18n %}
 {% load static %}
 
+<!--네비바-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--배경색, 폰트-->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link href="{% static 'css/_settings1.css' %}" rel="stylesheet">
-   
-</head>
-<body>
-   <div class="container">
-       <div class="setting2">
-            <div class="text" style=" font-size: 24px;text-align: center;width: 700px;height:20px ;">
-            언어 설정
-            </div>
-        </div>
-    </div>
+    <!--아이콘-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--글쓰기-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/_settings1.css' %}">
   
-    <div class="container">
-        <div class="setting1">
-         
-            <div class="text "> 한국어</div>
-            <div class="text "> 영어</div>
-          
-        </div>
-    </div>
-    
-   
+</head>
+<body> 
+<div class="naviBackground">
 
+    <a href={% url 'post:post_form' %}>
+        <span class="material-icons" style="left: 20px;">edit</span>
+    </a>
+
+    <a href={% url 'recommend:search' %}>
+        <span class="material-icons" style="left: 90px;">search</span>
+    </a>
     
+
+    <a href={% url 'accounts:home' %} >
+        <span class="material-icons" style="left: 160px;">home</span>
+    </a>
+
+    <a href={% url 'mypage:mypage' %} >
+        <span class="material-icons" style="left: 230px;">person</span>
+    </a>
+    <a href={% url 'settings:config_home' %}>
+        <span class="material-icons" style="left: 300px;">settings</span>
+    </a>
+    
+</div>
 </body>
 </html>
-

@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,8 @@
         <div class="mypagetextback">
             <div class="back"></div>
         </div>
-        <div class="text">마이페이지</div>
+        {% block contents %}
+        <div class="text">{% trans "마이페이지" %}</div>
     </div>
 
     <!--내정보-->
@@ -27,19 +29,19 @@
             <p>
                 {% if user_profile.profile_picture %}
                 <div class="profileImage">
-                    <img src="{{ user_profile.profile_picture.url }}" alt="프로필 사진" style="border-radius: 100%; width: 100px; height: 100px;">
+                    <img src="{{ user_profile.profile_picture.url }}" alt="프로필 사진" style="border-radius: 100%;">
                 </div>
                     
                 {% else %}
-                    이미지 없음
+                    {% trans "이미지 없음" %}
                 {% endif %}
             </p>
-            <p style="padding-left: 10px;">닉네임: {{ user_profile.nickname }}</p>
-            <p style="padding-left: 10px;">나이: {{ user_profile.age }}</p>
-            <p style="padding-left: 10px;">여행 스타일: {{ user_profile.travel_style }}</p>
+            <p style="padding-left: 10px;">{% trans "닉네임" %}: {{ user_profile.nickname }}</p>
+            <p style="padding-left: 10px;">{% trans "나이" %}: {{ user_profile.age }}</p>
+            <p style="padding-left: 10px;">{% trans "여행 스타일" %}: {{ user_profile.travel_style }}</p>
             {% csrf_token %}
             <div class="mypageeditbtn">
-                <a href="{% url 'mypage:edit_profile' %}">내 정보 수정하기</a>
+                <a href="{% url 'mypage:edit_profile' %}">{% trans "내 정보 수정하기" %}</a>
             </div>
 
         </div>
@@ -49,7 +51,7 @@
     
     <div class="mywriting" style="width: 334px; height: 240px; left: 30px; top: 387px; position: absolute">
         <div class="mywritingback">
-            <div class="myText"><내가 작성한 글></div>
+            <div class="myText"><{% trans "내가 작성한 글" %}></div>
             <br>
             <ul>
                 {% for post in user_posts %}
@@ -60,10 +62,12 @@
                         <p style="color: #545454; font-size: 12px;">{{ post.contents }}</p>
                     </a>
                 {% else %}
-                    글 수정: {{ post.title }}
+                    {% trans "글 수정" %}: {{ post.title }}
+                    
                 {% endif %}
                 </li>
                 {% endfor %}
+                {% endblock%}
         
             </ul>
         </div>
@@ -89,6 +93,7 @@
         <a href={% url 'mypage:mypage' %} >
             <span class="material-icons" style="left: 230px;">person</span>
         </a>
+
         <a href={% url 'settings:config_home' %}>
             <span class="material-icons" style="left: 300px;">settings</span>
         </a>

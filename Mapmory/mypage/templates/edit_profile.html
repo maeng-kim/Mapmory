@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,8 @@
     <!--내정보수정하기제목-->
     <div class="myinfoedit" style="width: 204px; height: 34px; left: 97px; top: 73px; position: absolute">
         <div class="back"></div>
-        <div class="text">내 정보 수정하기</div>
+        {% block contents %}
+        <div class="text"style="font-size:15px">{% trans "내 정보 수정하기" %}</div>
       </div>
 
 
@@ -39,7 +41,7 @@
 
             <!-- 닉네임 -->
             <div class="nickname">
-                <label for="{{ form.nickname.id_for_label }}">닉네임: </label>
+                <label for="{{ form.nickname.id_for_label }}">{% trans "닉네임" %}: </label>
                 {{ form.nickname }}
                 {% if form.nickname.errors %}
                     <ul class="errorlist">
@@ -54,7 +56,7 @@
 
             <!-- 나이 -->
             <div class="age">
-                <label for="{{ form.age.id_for_label }}">나이: </label>
+                <label for="{{ form.age.id_for_label }}">{% trans "나이" %}: </label>
                 {{ form.age }}
                 {% if form.age.errors %}
                     <ul class="errorlist">
@@ -68,7 +70,7 @@
             <br><br>
             <!-- 여행스타일 -->
             <div class="travelSt">
-                <label for="{{ form.travel_style.id_for_label }}">여행 스타일: </label>
+                <label for="{{ form.travel_style.id_for_label }}">{% trans "여행 스타일" %}: </label>
                 {{ form.travel_style }}
                 {% if form.travel_style.errors %}
                     <ul class="errorlist">
@@ -83,7 +85,8 @@
           
         </div>
         <!-- 수정하기 버튼 -->
-        <button type="submit">수정하기</button>
+        <button type="submit">{% trans "수정하기" %}</button>
+        {% endblock %}
     </form>
     
 

@@ -1,10 +1,16 @@
+
 <!--config_home-->
+{%load i18n%}
 {% load static %}
 <!DOCTYPE html>
+{% block contents %}
 <head>
     <!--배경색, 폰트-->
-      <link rel="stylesheet" href="{% static 'css/main.css' %}">
-      <link rel="stylesheet" href="{% static 'css/_settings1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!--아이콘-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--글쓰기-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/_settings1.css' %}">
   
 </head>
     
@@ -14,7 +20,7 @@
         
             <div class="setting2">
               <div class="text" style=" font-size: 24px;text-align: center;width: 700px;height:20px ;">
-                     설정
+                     {% trans "설정" %}
                 </div>
             </div>
           </div>
@@ -22,24 +28,15 @@
     <div class="container">
         <div class="setting1">
          
-          <div class="text "> 언어 설정</div>
-          <div class="text" >다크 모드</div>            
-          <div class="text" >보안</div>
+          <div class="text "> {% trans "언어 설정" %}</div>   
+          <div class="text" >{% trans "보안" %}</div>
         </div>
     </div>
-
+{% endblock %}
 
   
-
-   
-
-   
-    
-  
-
- 
     <!--언어 설정-->
-    <a href="{% url 'ko_en' %}">
+    <a href={% url 'settings:ko_en' %}>
         <div style="position: absolute; left: 265px; top: 10px;">
             <button class="Rectangle5" id="bar" style="border: none;">
         <div>
@@ -49,8 +46,8 @@
             </button>
         </div>
     </a>
-    <!--다크 모드-->
-    <a href="{% url 'dark_mode' %}">
+    <!--보안-->
+    <a href={% url 'settings:config_security' %}>
         <div style="position: absolute; left: 265px; top: 70px;">
             <button class="Rectangle5" id="bar" style="border: none;">
         <div>
@@ -60,34 +57,34 @@
             </button>
         </div>
     </a>
-    <!--보안-->
-    <a href="{% url 'config_security' %}">
-        <div style="position: absolute; left: 265px; top: 140px;">
-            <button class="Rectangle5" id="bar" style="border: none;">
-        <div>
-        <img class="bar3" style="width: 30px; height: 30px; left: 54px; top: 130px; position: absolute;"
-             src="{% static 'img/bar3.png' %}" />
-        </div>
-            </button>
-        </div>
+    
+
+     
+</div>
+<!--네비바-->
+<div class="naviBackground">
+
+    <a href={% url 'post:post_form' %}>
+        <span class="material-icons" style="left: 20px;">edit</span>
+    </a>
+
+    <a href={% url 'recommend:search' %}>
+        <span class="material-icons" style="left: 90px;">search</span>
+    </a>
+
+    <a href={% url 'accounts:home' %} >
+        <span class="material-icons" style="left: 160px;">home</span>
+    </a>
+
+    <a href={% url 'mypage:mypage' %} >
+        <span class="material-icons" style="left: 230px;">person</span>
+    </a>
+
+    <a href={% url 'settings:config_home' %}>
+        <span class="material-icons" style="left: 300px;">settings</span>
     </a>
     
-    
-
-     
-     
-     
-
-
-          
-     
 </div>
 
 </body>
     
-
-     
-     
-
-
-          

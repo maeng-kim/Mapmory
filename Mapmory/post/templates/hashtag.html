@@ -1,14 +1,15 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Hashtag Selection</title>
         <!--배경색, 폰트-->
-        <link rel="stylesheet" href="{% static 'css/main.css' %}?v=2">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <!--아이콘-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--글쓰기->해시태그선택-->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/_3_2wirting_hashtag.css' %}?v=2">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/_3_2wirting_hashtag.css' %}">
     
         <script>
             var username = "{{ request.user.id }}";
@@ -21,12 +22,10 @@
         <div class="btn" >
             <form id="hashtagForm" method="post" action="{% url 'post:post_form' %}">
                 <div id="hashtag-container"></div>
-                <a type="button" style="left: 314px; top: 72px;" onclick="submitSelection()">등록</a>
+                <a type="button" style="left: 314px; top: 72px;" onclick="submitSelection()">{% trans "등록" %}</a>
                 {% csrf_token %}
             </form>
         </div>
-
-        <script type="text/javascript" src="../../static/js/_3_2writing_hashtag.js"></script>
 
         <!--네비바-->
         <div class="naviBackground">
@@ -52,6 +51,10 @@
             </a>
             
         </div>
+
+
+
+        <script type="text/javascript" src="../../static/js/_3_2writing_hashtag.js"></script>
     </body>
 </html>
 

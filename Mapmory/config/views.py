@@ -17,15 +17,9 @@ def config_home(request):
 #보안
 def config_secuity(request):
   return render(request, 'security.html')
-#다크모드
-def dark_mode(request):
-  return render(request, 'dark_mode.html')
-#알림설정
-def notification(request):
-  return render(request, 'notification.html')
 # 언어 변경
 def ko_en(request):
-  return render(request, 'lang_url.html')
+    return render(request, 'lang_url.html')
 
 def set_language(request):
     if request.method == 'POST':
@@ -33,8 +27,10 @@ def set_language(request):
         if language in [lang_code for lang_code, _ in settings.LANGUAGES]:
             translation.activate(language)
             request.session[translation.LANGUAGE_SESSION_KEY] = language
-            return render(request, 'set_lang.html')
-    return render(request, 'set_lang.html')
+            request.session.modified = True
+            return redirect(request.META.get('HTTP_REFERER', 'config_home'))  # Redirect to the previous page
+    return redirect('config_home')
+
   
   
 # 비밀번호 변경
