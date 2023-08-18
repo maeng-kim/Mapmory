@@ -1,12 +1,13 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <!--배경색, 폰트-->
-        <link rel="stylesheet" href="{% static 'css/main.css' %}?v=2">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <!--회원가입-->
-        <link rel="stylesheet" href="{% static 'css/_0membership.css' %}?v=2">
+        <link rel="stylesheet" href="{% static 'css/_0membership.css' %}">
         
     </head>
     <body>
@@ -15,7 +16,8 @@
           <div class="membershiptextback">
               <div class="back"></div>
           </div>
-          <div class="text">회원가입</div>
+          {% block contents %}
+          <div class="text">{% trans "회원가입" %}</div>
         </div>
 
 
@@ -32,25 +34,24 @@
                 <input name="email" type="text" class="membershipInfo" style="left: 130px; top: 260px; position: absolute;">
                 </input>
             </div>
-
-
             <div class="container" >
               <div class="text" style="left: 30px; top: 142px; position: absolute;">
-                  아이디
+                  {% trans "아이디" %}
               </div>
               <div class="text" style="left: 30px; top: 184px; position: absolute;">
-                  비밀번호
+                  {% trans "비밀번호" %}
               </div>
               <div class="text" style="left: 30px; top: 226px; position: absolute;">
-                  비밀번호확인
+                  {% trans "비밀번호확인" %}
               </div>
               <div class="text" style="left: 30px; top: 268px; position: absolute;">
-                  이메일
+                  {% trans "이메일" %}
               </div>
             </div>
-
+            
             <!--가입버튼-->
-            <input class="btn btn-primary" type="submit" value="가입">
+            <input class="btn btn-primary" type="submit" value="{% trans "가입" %}">
+            {% endblock%}
         </form>
     </body>
 </html>

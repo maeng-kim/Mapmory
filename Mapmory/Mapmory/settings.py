@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-import environ
+# import environ
 # import pymysql
 '''
 pymysql.install_as_MySQLdb()
@@ -26,12 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='django-insecure-5_pa08b*n7an&_gkwo7+crz_1g=^1f3@(y-!)i5i%wih3sbt!j'
+
+SECRET_KEY = 'django-insecure-5_pa08b*n7an&_gkwo7+crz_1g=^1f3@(y-!)i5i%wih3sbt!j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.64.136.249']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -198,3 +199,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 ALLOWED_HOSTS = ['34.64.136.249']
+

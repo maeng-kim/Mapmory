@@ -1,42 +1,42 @@
-
-
+{% extends "base.html"%}
+{% load i18n %}
 {% load static %}
 
+<!--네비바-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{% static 'css/language.css' %}" rel="stylesheet">
+    <!--배경색, 폰트-->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-     <link href="{% static 'css/_settings2.css' %}" rel="stylesheet">
-     <script src="{%static 'js/script.js'%}"></script>
+    <!--아이콘-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--글쓰기-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/_settings1.css' %}">
+  
 </head>
-<body>
+<body> 
+<div class="naviBackground">
 
+    <a href={% url 'post:post_form' %}>
+        <span class="material-icons" style="left: 20px;">edit</span>
+    </a>
+
+    <a href={% url 'recommend:search' %}>
+        <span class="material-icons" style="left: 90px;">search</span>
+    </a>
     
+
+    <a href={% url 'accounts:home' %} >
+        <span class="material-icons" style="left: 160px;">home</span>
+    </a>
+
+    <a href={% url 'mypage:mypage' %} >
+        <span class="material-icons" style="left: 230px;">person</span>
+    </a>
+    <a href={% url 'settings:config_home' %}>
+        <span class="material-icons" style="left: 300px;">settings</span>
+    </a>
     
-    <div style="width: 204px; height: 34px; left: 97px; top: 67px; position: absolute; background: rgba(255, 240, 239, 0.79); box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10); border-radius: 20px; border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid"></div>
-            <div class="korean-text" style="left: 157px; top: 75px; position: absolute; text-align: center; color: #545454; font-size: 22px; font-family: Gmarket Sans TTF; font-weight: 500; line-height: 20px; word-wrap: break-word">언어 설정</div>
-            <div class="english-text" style="left: 157px; top: 75px; position: absolute; text-align: center; color: #545454; font-size: 22px; font-family: Gmarket Sans TTF; font-weight: 500; line-height: 20px; word-wrap: break-word">Language</div>
-    </div>
-            
-          <div style="width: 334px; height: 96px; left: 31px; top: 179px; position: absolute; background: rgba(255, 240, 239, 0.79); box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10); border-radius: 10px; border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid"></div>
-          <div class="korean-text" style="left: 40px; top: 205px; position: absolute; text-align: center; color: #545454; font-size: 20px; font-family: Gmarket Sans TTF; font-weight: 500; line-height: 20px; word-wrap: break-word">영어</div>
-        <div class="english-text" style="left: 40px; top: 205px; position: absolute; text-align: center; color: #545454; font-size: 20px; font-family: Gmarket Sans TTF; font-weight: 500; line-height: 20px; word-wrap: break-word">english</div>
-         
-    </div>
-    
-    <div style="position: absolute; left: 265px; top: 70px; ">
-               <button id="darkModeToggle" class="Rectangle5" onclick="toggleLanguage()">
-        <div>
-        <img class="Rectangle5" style="width: 30px; height: 30px; left: 54px; top: 130px; position: absolute;"
-             src="{% static 'img/bar3.png' %}" />
-        </div>
-            </button>
-        </div>
-    </div>
+</div>
 </body>
 </html>
-

@@ -1,53 +1,54 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Email Information</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        <link href="{% static 'css/_settings1.css' %}" rel="stylesheet">
-         
-     <script src="{%static 'js/script.js'%}"></script>
-
-
-          
+    <link href="{% static 'css/_settings1.css' %}" rel="stylesheet">
+   
+     <!--아이콘-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    {% block contents %}
     <div class="container">
         <div class="setting2">
-          <div class="korean-text">
-              연결된 이메일 확인
-              </div>
-
-          </div>
-          <div class="english-text">
-           <div class="text">check email</div>
-                </div>
-          </div>
+            {% trans "연결된 이메일 확인" %}
         </div>
-      </div>
-      
-   
-    
 
-    <div style="width: 400px;
-          height: 300px;
-         left: -10px;
-        top: 120px;
-        position:absolute;
-         
-          box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, 0.10);
-          justify-content: center;
-          align-items: center;
-          background: rgba(255, 240, 239, 0.79);
-          border-radius: 50px; 
-          border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid;
-          display: inline-flex;">
-      
-    {% if email %}
-        <h4>Input Email : {{ email }}</h4>
-    {% else %}
-        <h2>Email not available</h2>
-    {% endif %}
-</div>
+        <div class="setting1">
+            <br><br>
+            {% if email %}
+            <h4>{% trans "연결된 이메일" %} : {{ email }}</h4>
+            {% else %}
+            <h2>{% trans "이메일이 존재하지 않습니다" %}</h2>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+    <div class="naviBackground">
+
+        <a href={% url 'post:post_form' %}>
+            <span class="material-icons" style="left: 20px;">edit</span>
+        </a>
+
+        <a href={% url 'recommend:search' %}>
+            <span class="material-icons" style="left: 90px;">search</span>
+        </a>
+        
+
+        <a href={% url 'accounts:home' %} >
+            <span class="material-icons" style="left: 160px;">home</span>
+        </a>
+
+        <a href={% url 'mypage:mypage' %} >
+            <span class="material-icons" style="left: 230px;">person</span>
+        </a>
+        <a href={% url 'settings:config_home' %}>
+            <span class="material-icons" style="left: 300px;">settings</span>
+        </a>
+        
+    </div>
 </body>
 </html>

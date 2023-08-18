@@ -1,49 +1,39 @@
-
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <head>
     <link href="{% static 'css/_settings1.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-      <link rel="stylesheet" href="{% static 'css/_settings1.css' %}">
-     <script src="{%static 'js/script.js'%}"></script>
+    
+     <!--아이콘-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+   
 </head>
 <body>
-   
+   {% block contents %}
 
     <div class="container">
-        
-            <div class="setting2">
-              <div class="korean-text">
-                <div class="text" style=" font-size: 24px;text-align: center;width: 700px;height:20px ;">
-                     보안
-                </div>
-            </div>
-            <div class="english-text">
+        <div class="setting2">
               <div class="text" style=" font-size: 24px;text-align: center;width: 700px;height:20px ;">
-                     Security
+                     {% trans "보안" %}
                 </div>
             </div>
-            </div>
+            
+    </div>
     </div>
     <div class="container">
         <div class="setting1">
-                <div class="korean-text">
-           <div class="text">연결된 이메일</div>
-                </div>
-                     <div class="english-text">
-           <div class="text">connected Email</div>
-                </div>
-                         <div class="korean-text">
-           <div class="text">비밀번호 재설정</div>
-                </div>
-                     <div class="english-text">
-           <div class="text">password reset</div>
-                </div>
-          
-           
+           <div class="text">
+                {% trans "연결된 이메일" %}
+            </div>
+            <div class="text">
+            {% trans "비밀번호 재설정 "%}
+            </div> 
         </div>
     </div>
-    <a href="{% url 'show_email' %}">
+    {% endblock %}
+    <a href="{% url 'settings:show_email' %}">
         <div style="position: absolute; left: 265px; top: 20px;">
             <button class="Rectangle5" style="border: none;">
         <div>
@@ -53,7 +43,7 @@
             </button>
         </div>
     </a>
-    <a href="{% url 're_password' %}">
+    <a href="{% url 'settings:re_password' %}">
         <div style="position: absolute; left: 265px; top: 80px;">
             <button class="Rectangle5" style="border: none;">
         <div>
@@ -63,12 +53,30 @@
             </button>
         </div>
     </a>
-    
-   
-    
-</body>
-</html>
-    
+    <div class="naviBackground">
+
+        <a href={% url 'post:post_form' %}>
+            <span class="material-icons" style="left: 20px;">edit</span>
+        </a>
+
+        <a href={% url 'recommend:search' %}>
+            <span class="material-icons" style="left: 90px;">search</span>
+        </a>
+        
+
+        <a href={% url 'accounts:home' %} >
+            <span class="material-icons" style="left: 160px;">home</span>
+        </a>
+
+        <a href={% url 'mypage:mypage' %} >
+            <span class="material-icons" style="left: 230px;">person</span>
+        </a>
+        <a href={% url 'settings:config_home' %}>
+            <span class="material-icons" style="left: 300px;">settings</span>
+        </a>
+        
+    </div>
+
 </body>
 </html>
 

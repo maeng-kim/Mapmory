@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -17,14 +18,16 @@
         <!-- 말풍선 -->
         <img class="Tosun" style="width: 100px; height: 100px; left: 184px; top: 160px; 
                 position: absolute" src = "{% static 'img/malpungseon.png' %}" alt="말풍선"/>
-        <div class="malText" style="left: 214px; top: 200px; position: absolute; font-size: 20px;">안녕!</div>
+        {% block contents %}
+        <div class="malText" style="left: 214px; top: 200px; position: absolute; font-size: 20px;">{% trans "안녕" %}!</div>
 
         <!--검색창-->
         <div class="searchBack">
             <!--검색창에 키워드 입력하면 search로 연결-->
             <form method='post' action={% url 'recommend:search' %}>
                 {% csrf_token %}
-                <input type="text" name="keyword" placeholder="검색할 지역을 입력하세요">
+                <input type="text" name="keyword" placeholder="{% trans "검색할 지역을 입력하세요" %}">
+                {% endblock%}
             </form>
         </div>
 

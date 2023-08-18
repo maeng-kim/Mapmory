@@ -1,10 +1,13 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>view_post</title>
 </head>
 <body>
-    <h2>제목: {{ post.title }}</h2>
-    <p>내용: {{ post.contents }}</p>
+    {% block contents %}
+    <h2>{% trans "제목" %}: {{ post.title }}</h2>
+    <p>{% trans "내용" %}: {{ post.contents }}</p>
+    {% endblock %}
 </body>
 </html>

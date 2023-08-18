@@ -1,0 +1,89 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Document{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="{% static 'css/_settings1.css' %}" rel="stylesheet">
+     
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!--네비바-->
+    <div class="naviBackground">
+
+        <a href={% url 'post:post_form' %}>
+            <span class="material-icons" style="left: 20px;">edit</span>
+        </a>
+
+        <a href={% url 'recommend:search' %}>
+            <span class="material-icons" style="left: 90px;">search</span>
+        </a>
+        
+
+        <a href={% url 'accounts:home' %} >
+            <span class="material-icons" style="left: 160px;">home</span>
+        </a>
+
+        <a href={% url 'mypage:mypage' %} >
+            <span class="material-icons" style="left: 230px;">person</span>
+        </a>
+        <a href={% url 'settings:config_home' %}>
+            <span class="material-icons" style="left: 300px;">settings</span>
+        </a>
+        
+    </div>
+   <div class="container">
+       <div class="setting2">
+            <div class="text" style="font-size: 17px;text-align: center;width: 700px;height: 20px;">
+            {% block page_title %}{% trans "언어 설정" %}{% endblock %}
+            </div>
+        </div>
+    </div>
+  
+    <div class="container">
+        <div class="setting1">
+            <div class="text">
+                <form method="post" action="{% url 'set_language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="ko">
+                    <button type="submit"style="font-size: 20px;border:none;text-align: center;width: 315px;height: 40px; background-color:white" class="change-language{% if LANGUAGE_CODE == 'ko' %} current{% endif %}">
+                        {% trans "한국어" %}
+                    </button>
+                </form>
+            </div>
+            <div class="text">
+                <form method="post" action="{% url 'set_language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="language" value="en">
+                    <button type="submit"style="font-size: 20px;border:none;text-align: center;width: 315px;height: 40px; background-color:white" class="change-language{% if LANGUAGE_CODE == 'en' %} current{% endif %}">
+                        {% trans "영어" %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $(".change-language").on("click", function(event) {
+                event.preventDefault();
+                var language = $(this).find("input[name=language]").val();
+                $.cookie("django_language", language, { path: "/", expires: 365 });
+                location.reload();
+            });
+        });
+    </script>
+    
+</body>
+</html>
+

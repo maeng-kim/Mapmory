@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -9,19 +10,20 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--글쓰기->해시태그선택-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/_4_3recommend_result.css' %}?v=2">
-    
 </head>
 <body>
     
 
     <form method='post' action={% url 'recommend:search' %}>
         {% csrf_token %}
-        <input type="text" name="keyword" placeholder="검색할 지역을 입력하세요">
+        {% block contents %}
+        <input type="text" name="keyword" placeholder="{% trans "검색할 지역을 입력하세요" %}">
     </form>
 
 
-    <div class="placeText">
-        #{{ hashtag_name }} 추천 장소
+    <div class="placeText"style="font-size:19px">
+        #{{ hashtag_name }} {% trans "추천 장소" %}
+        {% endblock %}
     </div>
     
     <ul class="ul">

@@ -1,14 +1,15 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>글 작성 페이지</title>
     <!--배경색, 폰트-->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!--아이콘-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--글쓰기-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/_3_1writing.css' %}?v=2">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/_3_1writing.css' %}">
     <!-- Add slick-carousel stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -49,9 +50,9 @@
                 <div class="contentsWriting">{{ form.contents }}</div>
             </div>
         </div>
-        
-
-        <input type="submit" value="등록"></input>
+        {% block contents %}
+        <input type="submit" value="{% trans "등록" %}"></input>
+        {% endblock %}
     </form>
 
     <!-- Add slick-carousel script -->
@@ -66,7 +67,6 @@
             });
         });
     </script>
-
 
     <!--네비바-->
     <div class="naviBackground">

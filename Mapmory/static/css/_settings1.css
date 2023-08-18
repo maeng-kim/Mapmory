@@ -98,3 +98,24 @@
   .english-text {
     display: none;
   }
+  /*네비바*/
+
+.naviBackground{
+  width: 342px; height: 59px; 
+  left: 20px; top: 689.50px; position: absolute;
+  background: rgba(250, 223, 222, 0.69); 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+  border-radius: 100px; 
+  border: 0.15px rgba(84.26, 84.26, 84.26, 0.80) solid; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start;
+  gap: 10px; 
+  display: inline-flex;
+}
+
+.naviBackground > a > .material-icons{
+  color: rgba(84.26, 84.26, 84.26, 0.80); 
+  width: 26px; height: 26px; top: 19px; 
+  position: absolute; font-size: 30px;
+}

@@ -1,10 +1,12 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>my_posts</title>
 </head>
 <body>
-    <h1>내 글 보기</h1>
+    {% block contents %}
+    <h1>{% trans "내 글 보기" %}</h1>
     <ul>
         {% for post in user_posts %}
         <li>
@@ -14,10 +16,11 @@
             <p>{{ post.contents }}</p>
         </a>
         {% else %}
-            글 수정: {{ post.title }}
+            {% trans "글 수정" %}: {{ post.title }}
         {% endif %}
         </li>
     {% endfor %}
+    {% endblock %}
     </ul>
 </body>
 </html>
