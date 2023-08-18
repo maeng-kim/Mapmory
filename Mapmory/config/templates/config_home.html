@@ -35,8 +35,20 @@
 {% endblock %}
 
   
+
+        <!--보안-->
+    <a href="{% url 'config_security' %}">
+        <div style="position: absolute; left: 265px; top: 220px;">
+            <button class="Rectangle5" id="bar" style="border: none;">
+        <div>
+        <img class="bar3" style="width: 30px; height: 30px; left: 54px; top: 130px; position: absolute;"
+             src="{% static 'img/bar3.png' %}" />
+        </div>
+            </button>
+        </div>
+    </a>
     <!--언어 설정-->
-    <a href={% url 'settings:ko_en' %}>
+    <a href="{% url 'ko_en' %}">
         <div style="position: absolute; left: 265px; top: 10px;">
             <button class="Rectangle5" id="bar" style="border: none;">
         <div>
@@ -46,8 +58,8 @@
             </button>
         </div>
     </a>
-    <!--보안-->
-    <a href={% url 'settings:config_security' %}>
+    <!--다크 모드-->
+    <a href="{% url 'dark_mode' %}">
         <div style="position: absolute; left: 265px; top: 70px;">
             <button class="Rectangle5" id="bar" style="border: none;">
         <div>
@@ -57,6 +69,24 @@
             </button>
         </div>
     </a>
+    <a href="{% url 'notification' %}">
+        <div style="position: absolute; left: 265px; top: 138px;">
+            <button class="Rectangle5" id="bar" style="border: none;">
+        <div>
+        <img class="bar3" style="width: 30px; height: 30px; left: 54px; top: 130px; position: absolute;"
+             src="{% static 'img/bar3.png' %}" />
+        </div>
+            </button>
+        </div>
+    </a>
+    <div style="position: absolute; left: 35px; top: 20px;">
+            <button class="dark-button" id="darkModeToggle"style="position: absolute; left: 330px; top: 190px; border: none; padding: 0; margin: 0;" onclick="toggleDarkMode()">
+            <div>
+        <img class="bar3" style="width: 30px; height: 30px; left: 54px; top: 130px; position: absolute;"
+             src="{% static 'img/bar3.png' %}" />
+        </div>
+            </button>
+        </div>
     
 
      

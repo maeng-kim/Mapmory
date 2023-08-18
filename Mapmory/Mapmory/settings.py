@@ -198,7 +198,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
-
-
-
+ALLOWED_HOSTS = ['34.64.136.249']
 

@@ -71,8 +71,6 @@ def edit_post(request, post_id):
         if form.is_valid():
             form.save()
             return redirect('mypage:mypage')
-        else :
-            print(form.errors)
     else:
         form = PostForm(instance=post)
 
