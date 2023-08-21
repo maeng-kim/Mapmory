@@ -52,7 +52,7 @@ msgstr "start now"
 
 #: .\accounts\templates\signup.html:45
 msgid "비밀번호확인"
-msgstr "verify password"
+msgstr "verify p.w"
 
 #: .\accounts\templates\signup.html:48
 msgid "이메일"
@@ -76,7 +76,7 @@ msgstr "password to change"
 
 #: .\config\templates\change_password.html:38
 msgid "비밀번호 확인"
-msgstr "verify passowrd"
+msgstr "verify password"
 
 #: .\config\templates\change_password.html:41
 msgid "비밀번호 변경완료"

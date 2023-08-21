@@ -51,7 +51,7 @@
                 <form method="post" action="{% url 'set_language' %}">
                     {% csrf_token %}
                     <input type="hidden" name="language" value="ko">
-                    <button type="submit"style="font-size: 20px;font-family: Gmarket Sans TTF;border:1px solid #ccc; border-radius:50px;text-align: center;width: 315px;height: 40px; background-color:rgba(250, 240, 239, 0.2)" class="change-language{% if LANGUAGE_CODE == 'ko' %} current{% endif %}">
+                    <button type="submit"style="font-size: 20px;font-family: Gmarket Sans TTF;color:rgba(84.26, 84.26, 84.26, 1);border:1px solid #ccc; border-radius:50px;text-align: center;width: 315px;height: 40px; background-color:rgba(250, 240, 239, 0.2)" class="change-language{% if LANGUAGE_CODE == 'ko' %} current{% endif %}">
                         {% trans "한국어" %}
                     </button>
                 </form>
@@ -60,7 +60,7 @@
                 <form method="post" action="{% url 'set_language' %}">
                     {% csrf_token %}
                     <input type="hidden" name="language" value="en">
-                    <button type="submit"style="font-size: 20px;border:none;text-align: center;width: 315px;height: 40px; background-color:white" class="change-language{% if LANGUAGE_CODE == 'en' %} current{% endif %}">
+                    <button type="submit"style="font-size: 20px;font-family: Gmarket Sans TTF;color:rgba(84.26, 84.26, 84.26, 1);border:1px solid #ccc; border-radius:50px;text-align: center;width: 315px;height: 40px; background-color:rgba(250, 240, 239, 0.2)" class="change-language{% if LANGUAGE_CODE == 'ko' %} current{% endif %}">
                         {% trans "영어" %}
                     </button>
                 </form>
